@@ -1,6 +1,9 @@
 {%extends 'base.html'%} {%block content%}
 <div class="container">
   <h3>Hi {{user.username}}, Welcome to your Fantasy Fanatics dashboard.</h3>
-  <p><a href="{%url 'logout'%}">logout</a></p>
+  <form method="POST" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <button type="submit" class="btn btn btn-danger">Logout</button>
+  </form>
 </div>
 {%endblock%}

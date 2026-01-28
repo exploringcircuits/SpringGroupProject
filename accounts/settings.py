@@ -50,6 +50,15 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# URL where @login_required redirects unauthenticated users
+LOGIN_URL = '/user/login/'
+
+# Where users go after a successful login (redirect)
+LOGIN_REDIRECT_URL = '/user/'
+
+# Where users go after logout
+LOGOUT_REDIRECT_URL = '/user/'
+
 ROOT_URLCONF = 'accounts.urls'
 
 TEMPLATES = [
